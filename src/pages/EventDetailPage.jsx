@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Calendar, MapPin, Clock, Tag } from "lucide-react";
 import Navbar from "../components/Navbar.jsx";
-// import Footer from "../components/Footer.jsx";
+import Footer from "../components/Footer.jsx";
 import TicketForm from "../components/TicketForm.jsx";
 import { events } from "../data/events.js";
 import { formatDate, formatNaira, formatTime } from "../utils/storage.jsx";
@@ -155,7 +155,7 @@ export default function EventDetailPage() {
         </div>
       </main>
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
