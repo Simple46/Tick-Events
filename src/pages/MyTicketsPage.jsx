@@ -31,19 +31,19 @@ export default function MyTicketsPage() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      <main className="flex-1 bg-gray-50">
+      <main className="flex-1 bg-amber-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
           {/* Page header */}
           <div className="mb-8">
-            <p className="text-xs font-syne font-semibold uppercase tracking-widest text-gray-400 mb-1">
+            <p className="text-xs font-syne font-semibold uppercase tracking-widest text-amber-900 mb-1">
               Your Account
             </p>
             <div className="flex items-end justify-between">
-              <h1 className="font-syne font-extrabold text-3xl text-black">
+              <h1 className="font-syne font-extrabold text-3xl text-amber-950">
                 My Tickets
               </h1>
               {bookings.length > 0 && (
-                <span className="font-dm text-sm text-gray-400">
+                <span className="font-dm text-sm text-amber-900">
                   {bookings.length} booking{bookings.length !== 1 ? "s" : ""}
                 </span>
               )}
@@ -54,24 +54,24 @@ export default function MyTicketsPage() {
           {!loaded ? (
             /* Loading state */
             <div className="flex items-center justify-center py-24">
-              <div className="w-8 h-8 border-2 border-black border-t-transparent rounded-full animate-spin" />
+              <div className="w-8 h-8 border-2 border-amber-950 border-t-transparent rounded-full animate-spin" />
             </div>
           ) : bookings.length === 0 ? (
             /* Empty state */
             <div className="flex flex-col items-center justify-center py-24 text-center">
-              <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-5">
-                <CalendarX className="w-9 h-9 text-gray-400" />
+              <div className="w-20 h-20 bg-amber-100 rounded-full flex items-center justify-center mb-5">
+                <CalendarX className="w-9 h-9 text-amber-900" />
               </div>
-              <h2 className="font-syne font-bold text-xl text-black mb-2">
+              <h2 className="font-syne font-bold text-xl text-amber-950 mb-2">
                 No tickets yet
               </h2>
-              <p className="font-dm text-gray-400 text-sm max-w-xs mb-8 leading-relaxed">
+              <p className="font-dm text-amber-900 text-sm max-w-xs mb-8 leading-relaxed">
                 You haven't booked any events yet. Browse our lineup and grab
                 your first ticket.
               </p>
               <Link
                 to="/events"
-                className="flex items-center gap-2 bg-black text-white font-dm font-semibold px-6 py-3 rounded-xl hover:bg-gray-800 transition-colors"
+                className="flex items-center gap-2 bg-amber-950 text-white font-dm font-semibold px-6 py-3 rounded-xl hover:bg-amber-900 transition-colors"
               >
                 Browse Events
                 <ArrowRight className="w-4 h-4" />
@@ -89,13 +89,13 @@ export default function MyTicketsPage() {
               ))}
 
               {/* Bottom CTA */}
-              <div className="mt-4 pt-6 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p className="font-dm text-sm text-gray-400">
+              <div className="mt-4 pt-6 border-t border-amber-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p className="font-dm text-sm text-amber-900">
                   Want to attend more events?
                 </p>
                 <Link
                   to="/events"
-                  className="flex items-center gap-2 border border-gray-200 bg-white text-black font-dm font-medium text-sm px-5 py-2.5 rounded-xl hover:bg-gray-50 transition-colors"
+                  className="flex items-center gap-2 border border-amber-800 bg-white text-amber-950 font-dm font-medium text-sm px-5 py-2.5 rounded-xl hover:bg-amber-50 transition-colors"
                 >
                   <Ticket className="w-4 h-4" />
                   Browse More Events

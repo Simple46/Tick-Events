@@ -24,10 +24,10 @@ export default function EventsPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10">
           {/* Page header */}
           <div className="mb-8">
-            <p className="text-xs font-syne font-semibold uppercase tracking-widest text-gray-400 mb-1">
+            <p className="text-xs font-syne font-semibold uppercase tracking-widest text-amber-600 mb-1">
               Discover
             </p>
-            <h1 className="font-syne font-extrabold text-3xl text-black">
+            <h1 className="font-syne font-extrabold text-3xl text-amber-950">
               All Events
             </h1>
           </div>
@@ -36,13 +36,13 @@ export default function EventsPage() {
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
             {/* Search input */}
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-amber-900" />
               <input
                 type="text"
                 placeholder="Search events..."
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-xl text-sm font-dm text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+                className="w-full pl-10 pr-4 py-2.5 border border-amber-200 rounded-xl text-sm font-dm text-amber-950 placeholder:text-amber-900 focus:outline-none focus:ring-2 focus:ring-amber-950 focus:border-transparent"
               />
             </div>
           </div>
@@ -55,8 +55,8 @@ export default function EventsPage() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-1.5 rounded-full text-sm font-dm font-medium transition-colors ${
                   activeCategory === cat
-                    ? "bg-black text-white"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                    ? "bg-amber-950 text-white"
+                    : "bg-amber-100 text-amber-600 hover:bg-amber-200"
                 }`}
               >
                 {cat}
@@ -65,7 +65,7 @@ export default function EventsPage() {
           </div>
 
           {/* Results count */}
-          <p className="text-sm font-dm text-gray-400 mb-6">
+          <p className="text-sm font-dm text-amber-700 mb-6">
             {filtered.length} event{filtered.length !== 1 ? "s" : ""} found
           </p>
 
@@ -79,11 +79,11 @@ export default function EventsPage() {
           ) : (
             /* Empty state */
             <div className="flex flex-col items-center justify-center py-24 text-center">
-              <Search className="w-10 h-10 text-gray-300 mb-4" />
-              <h3 className="font-syne font-bold text-lg text-black mb-1">
+              <Search className="w-10 h-10 text-amber-700 mb-4" />
+              <h3 className="font-syne font-bold text-lg text-amber-950 mb-1">
                 No events found
               </h3>
-              <p className="font-dm text-gray-400 text-sm">
+              <p className="font-dm text-amber-700 text-sm">
                 Try a different search term or category.
               </p>
             </div>

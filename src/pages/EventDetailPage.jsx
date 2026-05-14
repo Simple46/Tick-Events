@@ -32,10 +32,10 @@ export default function EventDetailPage() {
             alt={event.name}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-amber-950/50" />
           {/* Category badge on image */}
           <div className="absolute bottom-5 left-5 md:left-10">
-            <span className="bg-white text-black text-xs font-syne font-bold px-3 py-1.5 rounded-full">
+            <span className="bg-white text-amber-950 text-xs font-syne font-bold px-3 py-1.5 rounded-full">
               {event.category}
             </span>
             <h1 className="font-syne font-extrabold text-3xl md:text-4xl text-white mt-3 leading-tight">
@@ -75,16 +75,16 @@ export default function EventDetailPage() {
                 ].map((item) => (
                   <div
                     key={item.label}
-                    className="flex items-start gap-3 bg-gray-50 border border-gray-100 rounded-xl px-4 py-3"
+                    className="flex items-start gap-3 bg-amber-50 border border-gray-100 rounded-xl px-4 py-3"
                   >
-                    <div className="w-8 h-8 bg-black text-white rounded-lg flex items-center justify-center shrink-0">
+                    <div className="w-8 h-8 bg-amber-950 text-white rounded-lg flex items-center justify-center shrink-0">
                       {item.icon}
                     </div>
                     <div>
-                      <p className="font-dm text-xs text-gray-400">
+                      <p className="font-dm text-xs text-amber-800">
                         {item.label}
                       </p>
-                      <p className="font-dm text-sm font-medium text-black leading-snug">
+                      <p className="font-dm text-sm font-medium text-amber-950 leading-snug">
                         {item.value}
                       </p>
                     </div>
@@ -94,17 +94,17 @@ export default function EventDetailPage() {
 
               {/* Description */}
               <div>
-                <h2 className="font-syne font-bold text-xl text-black mb-3">
+                <h2 className="font-syne font-bold text-xl text-amber-950 mb-3">
                   About this Event
                 </h2>
-                <p className="font-dm text-gray-600 text-base leading-relaxed">
+                <p className="font-dm text-amber-950 text-base leading-relaxed">
                   {event.description}
                 </p>
               </div>
 
               {/* Ticket pricing breakdown */}
               <div className="mt-8">
-                <h2 className="font-syne font-bold text-xl text-black mb-4">
+                <h2 className="font-syne font-bold text-xl text-amber-950 mb-4">
                   Ticket Pricing
                 </h2>
                 <div className="grid grid-cols-2 gap-4">
@@ -123,22 +123,24 @@ export default function EventDetailPage() {
                   ].map((t) => (
                     <div
                       key={t.type}
-                      className="border border-gray-200 rounded-xl p-4"
+                      className="border border-amber-700 rounded-xl p-4"
                     >
                       <div className="flex items-center justify-between mb-2">
-                        <span className="font-syne font-bold text-sm text-black">
+                        <span className="font-syne font-bold text-sm text-amber-950">
                           {t.type}
                         </span>
                         {t.type === "VIP" && (
-                          <span className="bg-black text-white text-xs font-dm px-2 py-0.5 rounded-full">
+                          <span className="bg-amber-950 text-white text-xs font-dm px-2 py-0.5 rounded-full">
                             Premium
                           </span>
                         )}
                       </div>
-                      <p className="font-syne font-extrabold text-2xl text-black mb-1">
+                      <p className="font-syne font-extrabold text-2xl text-amber-950 mb-1">
                         {formatNaira(t.price)}
                       </p>
-                      <p className="font-dm text-xs text-gray-500">{t.perks}</p>
+                      <p className="font-dm text-xs text-amber-900">
+                        {t.perks}
+                      </p>
                     </div>
                   ))}
                 </div>

@@ -71,19 +71,19 @@ export default function ConfirmationPage() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      <main className="flex-1 bg-gray-50">
+      <main className="flex-1 bg-amber-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
           {/* ── Success header ── */}
           <div className="text-center mb-10">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-black rounded-full mb-4">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-950 rounded-full mb-4">
               <CheckCircle className="w-8 h-8 text-white" />
             </div>
-            <h1 className="font-syne font-extrabold text-3xl md:text-4xl text-black mb-2">
+            <h1 className="font-syne font-extrabold text-3xl md:text-4xl text-amber-950 mb-2">
               Booking Confirmed!
             </h1>
-            <p className="font-dm text-gray-500 text-base">
+            <p className="font-dm text-amber-900 text-base">
               Your tickets for{" "}
-              <span className="font-semibold text-black">
+              <span className="font-semibold text-amber-950">
                 {booking.eventName}
               </span>{" "}
               are all set.
@@ -91,11 +91,11 @@ export default function ConfirmationPage() {
           </div>
 
           {/* ── Main card ── */}
-          <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm mb-6">
+          <div className="bg-white border border-amber-200 rounded-2xl overflow-hidden shadow-sm mb-6">
             {/* Reference banner */}
-            <div className="bg-black px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+            <div className="bg-amber-950 px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
               <div>
-                <p className="font-dm text-xs text-gray-400 mb-0.5">
+                <p className="font-dm text-xs text-amber-950 mb-0.5">
                   Booking Reference
                 </p>
                 <p className="font-syne font-bold text-white text-lg tracking-widest">
@@ -106,7 +106,7 @@ export default function ConfirmationPage() {
                 className={`text-xs font-dm font-semibold px-3 py-1.5 rounded-full ${
                   booking.ticketType === "vip"
                     ? "bg-amber-600 text-white"
-                    : "bg-green-600 text-gray-300"
+                    : "bg-green-600 text-gray-100"
                 }`}
               >
                 {booking.ticketType === "vip" ? "VIP" : "Regular"}
@@ -117,21 +117,21 @@ export default function ConfirmationPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                 {/* Left — booking details */}
                 <div>
-                  <h2 className="font-syne font-bold text-xl text-black mb-5">
+                  <h2 className="font-syne font-bold text-xl text-amber-950 mb-5">
                     {booking.eventName}
                   </h2>
 
                   <div className="flex flex-col gap-4">
                     {details.map((d) => (
                       <div key={d.label} className="flex items-start gap-3">
-                        <div className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center shrink-0 text-gray-500">
+                        <div className="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center shrink-0 text-amber-950">
                           {d.icon}
                         </div>
                         <div>
-                          <p className="font-dm text-xs text-gray-400">
+                          <p className="font-dm text-xs text-amber-900">
                             {d.label}
                           </p>
-                          <p className="font-dm text-sm font-medium text-black">
+                          <p className="font-dm text-sm font-medium text-amber-950">
                             {d.value}
                           </p>
                         </div>
@@ -140,11 +140,11 @@ export default function ConfirmationPage() {
                   </div>
 
                   {/* Total paid */}
-                  <div className="mt-6 pt-5 border-t border-gray-100">
-                    <p className="font-dm text-xs text-gray-400 mb-1">
+                  <div className="mt-6 pt-5 border-t border-amber-100">
+                    <p className="font-dm text-xs text-amber-900 mb-1">
                       Total Paid
                     </p>
-                    <p className="font-syne font-extrabold text-3xl text-black">
+                    <p className="font-syne font-extrabold text-3xl text-amber-950">
                       {formatNaira(booking.totalPaid)}
                     </p>
                   </div>
@@ -156,19 +156,19 @@ export default function ConfirmationPage() {
 
                   {/* Perforated divider */}
                   <div className="w-full flex items-center gap-2 my-5">
-                    <div className="w-4 h-4 rounded-full bg-gray-100 -ml-10 shrink-0" />
-                    <div className="flex-1 border-t-2 border-dashed border-gray-200" />
-                    <div className="w-4 h-4 rounded-full bg-gray-100 -mr-10 shrink-0" />
+                    <div className="w-4 h-4 rounded-full bg-amber-100 -ml-10 shrink-0" />
+                    <div className="flex-1 border-t-2 border-dashed border-amber-800" />
+                    <div className="w-4 h-4 rounded-full bg-amber-100 -mr-10 shrink-0" />
                   </div>
 
                   {/* Ticket stub info */}
-                  <div className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 text-center">
-                    <p className="font-syne font-bold text-sm text-black">
+                  <div className="w-full bg-aamber-50 border border-amber-100 rounded-xl px-4 py-3 text-center">
+                    <p className="font-syne font-bold text-sm text-amber-950">
                       {booking.quantity} ×{" "}
                       {booking.ticketType === "vip" ? "VIP" : "Regular"} Ticket
                       {booking.quantity > 1 ? "s" : ""}
                     </p>
-                    <p className="font-dm text-xs text-gray-400 mt-0.5">
+                    <p className="font-dm text-xs text-amber-900 mt-0.5">
                       Scan at the venue entrance
                     </p>
                   </div>
@@ -178,15 +178,15 @@ export default function ConfirmationPage() {
           </div>
 
           {/* ── Info notice ── */}
-          <div className="bg-white border border-gray-200 rounded-xl px-5 py-4 flex items-start gap-3 mb-8">
+          <div className="bg-white border border-amber-800 rounded-xl px-5 py-4 flex items-start gap-3 mb-8">
             <span className="text-lg shrink-0">
               <Lightbulb />
             </span>
-            <p className="font-dm text-sm text-gray-500 leading-relaxed">
+            <p className="font-dm text-sm text-amber-900 leading-relaxed">
               Save a screenshot of this page or visit{" "}
-              <span className="font-semibold text-black">My Tickets</span>{" "}
+              <span className="font-semibold text-amber-950">My Tickets</span>{" "}
               anytime to retrieve your QR code. Your reference number is{" "}
-              <span className="font-mono font-semibold text-black">
+              <span className="font-mono font-semibold text-amber-950">
                 {booking.reference}
               </span>
               .
@@ -197,14 +197,14 @@ export default function ConfirmationPage() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               to="/my-tickets"
-              className="flex items-center justify-center gap-2 bg-black text-white font-dm font-semibold px-6 py-3 rounded-xl hover:bg-gray-800 transition-colors"
+              className="flex items-center justify-center gap-2 bg-amber-950 text-white font-dm font-semibold px-6 py-3 rounded-xl hover:bg-amber-900 transition-colors"
             >
               View My Tickets
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               to="/events"
-              className="flex items-center justify-center gap-2 bg-white border border-gray-200 text-black font-dm font-medium px-6 py-3 rounded-xl hover:bg-gray-50 transition-colors"
+              className="flex items-center justify-center gap-2 bg-white border border-amber-900 text-amber-950 font-dm font-medium px-6 py-3 rounded-xl hover:bg-amber-50 transition-colors"
             >
               Back to Events
             </Link>

@@ -13,16 +13,16 @@ export default function QRCodeDisplay({ booking, size = 128 }) {
 
   return (
     <div className="flex flex-col items-center gap-3">
-      <div className="bg-white border border-gray-200 rounded-2xl p-4 shadow-sm">
+      <div className="bg-white border border-amber-900 rounded-2xl p-4 shadow-sm">
         <QRCode
           value={value}
           size={size}
           bgColor="#ffffff"
-          fgColor="#000000"
+          fgColor="#301a02"
           level="M"
         />
       </div>
-      <p className="font-dm text-xs text-gray-400 text-center">
+      <p className="font-dm text-xs text-amber-900 text-center">
         Present this QR code at the venue
       </p>
     </div>

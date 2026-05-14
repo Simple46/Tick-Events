@@ -28,11 +28,11 @@ export default function BookingCard({ booking, onCancel }) {
 
   return (
     <>
-      <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+      <div className="bg-white border border-amber-700 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
         {/* Top banner */}
-        <div className="bg-black px-5 py-3 flex items-center justify-between">
+        <div className="bg-amber-950 px-5 py-3 flex items-center justify-between">
           <div>
-            <p className="font-dm text-xs text-gray-400 mb-0.5">
+            <p className="font-dm text-xs text-amber-100 mb-0.5">
               Booking Reference
             </p>
             <p className="font-syne font-bold text-white text-sm tracking-widest">
@@ -54,7 +54,7 @@ export default function BookingCard({ booking, onCancel }) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
             {/* Left — Event details */}
             <div className="md:col-span-2">
-              <h3 className="font-syne font-bold text-lg text-black mb-4 leading-snug">
+              <h3 className="font-syne font-bold text-lg text-amber-950 mb-4 leading-snug">
                 {booking.eventName}
               </h3>
 
@@ -87,7 +87,7 @@ export default function BookingCard({ booking, onCancel }) {
                 ].map((item, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-2 text-gray-500"
+                    className="flex items-center gap-2 text-amber-900"
                   >
                     <span className="shrink-0">{item.icon}</span>
                     <span className="font-dm text-sm truncate">
@@ -100,14 +100,14 @@ export default function BookingCard({ booking, onCancel }) {
               {/* Total + booked date */}
               <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                 <div>
-                  <p className="font-dm text-xs text-gray-400">Total Paid</p>
-                  <p className="font-syne font-bold text-xl text-black">
+                  <p className="font-dm text-xs text-amber-900">Total Paid</p>
+                  <p className="font-syne font-bold text-xl text-amber-950">
                     {formatNaira(booking.totalPaid)}
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="font-dm text-xs text-gray-400">Booked on</p>
-                  <p className="font-dm text-sm text-gray-600">
+                  <p className="font-dm text-xs text-amber-800">Booked on</p>
+                  <p className="font-dm text-sm text-amber-950">
                     {new Date(booking.bookedAt).toLocaleDateString("en-NG", {
                       day: "numeric",
                       month: "short",
@@ -139,7 +139,7 @@ export default function BookingCard({ booking, onCancel }) {
         <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            className="absolute inset-0 bg-amber-950/50 backdrop-blur-sm"
             onClick={() => setShowConfirm(false)}
           />
 
@@ -147,21 +147,21 @@ export default function BookingCard({ booking, onCancel }) {
           <div className="relative bg-white rounded-2xl shadow-xl w-full max-w-sm p-6 z-10">
             <button
               onClick={() => setShowConfirm(false)}
-              className="absolute top-4 right-4 p-1 rounded-lg hover:bg-gray-100 transition-colors"
+              className="absolute top-4 right-4 p-1 rounded-lg hover:bg-amber-100 transition-colors"
             >
-              <X className="w-4 h-4 text-gray-500" />
+              <X className="w-4 h-4 text-amber-900" />
             </button>
 
             <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-4">
               <Trash2 className="w-5 h-5 text-red-500" />
             </div>
 
-            <h3 className="font-syne font-bold text-lg text-black mb-2">
+            <h3 className="font-syne font-bold text-lg text-amber-950 mb-2">
               Cancel this booking?
             </h3>
-            <p className="font-dm text-sm text-gray-500 leading-relaxed mb-6">
+            <p className="font-dm text-sm text-amber-900 leading-relaxed mb-6">
               You're about to cancel your tickets for{" "}
-              <span className="font-semibold text-black">
+              <span className="font-semibold text-amber-950">
                 {booking.eventName}
               </span>
               . This action cannot be undone.
@@ -170,7 +170,7 @@ export default function BookingCard({ booking, onCancel }) {
             <div className="flex gap-3">
               <button
                 onClick={() => setShowConfirm(false)}
-                className="flex-1 border border-gray-200 text-black font-dm font-medium text-sm py-2.5 rounded-xl hover:bg-gray-50 transition-colors"
+                className="flex-1 border border-gray-200 text-amber-950 font-dm font-medium text-sm py-2.5 rounded-xl hover:bg-gray-50 transition-colors"
               >
                 Keep Booking
               </button>

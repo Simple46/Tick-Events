@@ -56,7 +56,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0 z-50 bg-white border-b border-gray-200 transition-shadow ${
+      className={`sticky top-0 z-50 bg-white border-b border-amber-900 transition-shadow ${
         scrolled ? "shadow-md" : ""
       }`}
     >
@@ -64,11 +64,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-amber-950 rounded-lg flex items-center justify-center">
               <Ticket className="w-4 h-4 text-white" />
             </div>
-            <span className="font-syne font-bold text-xl text-black tracking-tight">
-              Ticket<span className="font-light">Hub</span>
+            <span className="font-syne font-bold text-xl text-amber-950 tracking-tight">
+              Tick<span className="font-light">Event</span>
             </span>
           </Link>
 
@@ -80,7 +80,7 @@ export default function Navbar() {
                   key={link.to}
                   href={link.to}
                   onClick={(e) => handleAnchorClick(e, link.to)}
-                  className="font-dm text-sm font-medium text-gray-500 hover:text-black hover:font-bold transition-colors cursor-pointer"
+                  className="font-dm text-sm font-medium text-amber-900 hover:text-amber-950 hover:font-bold transition-colors cursor-pointer"
                 >
                   {link.label}
                 </NavLink>
@@ -92,8 +92,8 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     `font-dm text-sm font-medium transition-colors ${
                       isActive
-                        ? "text-black border-b-2 border-black pb-0.5 font-bold"
-                        : "text-gray-500 hover:text-black"
+                        ? "text-amber-950 border-b-2 border-amber-950 pb-0.5 font-bold"
+                        : "text-amber-900 hover:text-amber-950"
                     }`
                   }
                 >
@@ -107,11 +107,11 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <Link
               to="/my-tickets"
-              className="relative p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              className="relative p-2 rounded-lg hover:bg-amber-100 transition-colors"
             >
-              <ShoppingBag className="w-5 h-5 text-black" />
+              <ShoppingBag className="w-5 h-5 text-amber-950" />
               {totalTickets > 0 && (
-                <span className="absolute -top-1 -right-1 w-5 h-5 bg-black text-white text-xs font-syne font-bold rounded-full flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 w-5 h-5 bg-amber-950 text-white text-xs font-syne font-bold rounded-full flex items-center justify-center">
                   {totalTickets > 99 ? "99+" : totalTickets}
                 </span>
               )}
@@ -119,7 +119,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setMenuOpen((prev) => !prev)}
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              className="md:hidden p-2 rounded-lg hover:bg-amber-100 transition-colors"
               aria-label="Toggle menu"
             >
               {menuOpen ? (
@@ -142,7 +142,7 @@ export default function Navbar() {
                   key={link.to}
                   href={link.to}
                   onClick={(e) => handleAnchorClick(e, link.to)}
-                  className="px-3 py-2.5 rounded-lg text-sm font-medium font-dm text-gray-700 hover:bg-gray-100 transition-colors cursor-pointer"
+                  className="px-3 py-2.5 rounded-lg text-sm font-medium font-dm text-amber-900 hover:bg-amber-950 hover:text-white transition-colors cursor-pointer"
                 >
                   {link.label}
                 </NavLink>
@@ -154,8 +154,8 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     `px-3 py-2.5 rounded-lg text-sm font-medium font-dm transition-colors ${
                       isActive
-                        ? "bg-black text-white font-bold"
-                        : "text-gray-700 hover:bg-gray-100"
+                        ? "bg-amber-950 text-white font-bold"
+                        : "text-amber-900 hover:bg-amber-950 hover:text-white"
                     }`
                   }
                 >
